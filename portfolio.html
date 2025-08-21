@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rakesh Singh Tomar | Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+    /* Reset */
+    * {
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f0f4ff;
+      color: #223366;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Site header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #3f51b5;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      z-index: 10000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      color: white;
+    }
+
+    header h1 {
+      font-weight: 700;
+      font-size: 1.6rem;
+      letter-spacing: 0.12em;
+      cursor: default;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 28px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      color: #aab8ff;
+      outline: none;
+    }
+
+    /* Main content */
+    main {
+      margin-top: 75px;
+      flex-grow: 1;
+      width: 100%;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 40px 20px;
+    }
+
+    section {
+      padding: 40px 0;
+      border-bottom: 1px solid #d7dbf7;
+      scroll-margin-top: 80px;
+    }
+
+    section:last-child {
+      border: none;
+    }
+
+    h2 {
+      font-weight: 700;
+      font-size: 2.2rem;
+      color: #3f51b5;
+      margin-bottom: 18px;
+      letter-spacing: 0.06em;
+      border-left: none;
+      padding-left: 0;
+    }
+
+    /* Back to Site hero */
+    #back-to-site {
+      text-align: center;
+      padding-bottom: 60px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 12px 26px;
+      background-color: #3f51b5;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.05rem;
+      border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 6px 18px rgba(63, 81, 181, 0.35);
+      transition: background-color 0.3s ease, transform 0.15s ease;
+    }
+    .cta-btn:hover { background-color: #6076ff; transform: translateY(-2px); }
+
+    /* Experience and Education grid */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+      gap: 40px;
+    }
+
+    /* Cards */
+    .card {
+      background: #f0f4ff;
+      border-radius: 16px;
+      padding: 25px 30px;
+      box-shadow: 0 12px 36px rgba(122, 153, 255, 0.15);
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 48px rgba(122, 153, 255, 0.3);
+    }
+    .card h3 {
+      font-weight: 600;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      color: #4052a4;
+    }
+    .card small {
+      display: block;
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+      color: #7685c4;
+    }
+    .card ul {
+      color: #53629b;
+      font-size: 1rem;
+      list-style-position: inside;
+      padding-left: 12px;
+      line-height: 1.5;
+    }
+    .card ul li::marker { color: #7a99ff; font-weight: 700; }
+
+    /* Skills badges */
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    .skill {
+      background: #7a99ff;
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 10px 22px;
+      border-radius: 40px;
+      box-shadow: 0 8px 24px rgba(122, 153, 255, 0.4);
+      user-select: none;
+      cursor: default;
+      transition: transform 0.2s ease;
+    }
+    .skill:hover { transform: scale(1.08); box-shadow: 0 14px 40px rgba(122, 153, 255, 0.6); }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px 10px;
+      background: #3f51b5;
+      color: white;
+      font-weight: 400;
+      font-size: 0.9rem;
+      user-select: none;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .grid-2 { grid-template-columns: 1fr; }
+      header { flex-direction: column; gap: 10px; }
+      nav a { margin-left: 0; margin-right: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Rakesh Singh Tomar</h1>
+    <nav aria-label="Primary navigation">
+      <a href="index.html">Back to Site</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+    </nav>
+  </header>
+
+  <main class="container" role="main">
+    <!-- Back to Site section -->
+    <section id="back-to-site">
+      <h2>Welcome to My Portfolio</h2>
+      <p style="max-width:560px; margin:10px auto 0; color:#41507f;">
+        Explore my professional journey, then return to the main site anytime.
+      </p>
+      <a class="cta-btn" href="index.html">Back to Site</a>
+    </section>
+
+    <section id="experience">
+      <h2>Professional Experience</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Operations & MIS Manager</h3>
+          <small>Shakuntlam | August 2024 – Present</small>
+          <ul>
+            <li>Manage daily operations and coordinate teams efficiently.</li>
+            <li>Vendor & supplier coordination for timely procurement.</li>
+            <li>Site visits to monitor execution and client satisfaction.</li>
+            <li>Drive cost efficiency and process improvements.</li>
+            <li>Billing, documentation, and compliance management.</li>
+            <li>MIS reporting supporting executive decisions.</li>
+            <li>Assist in team hiring and training for performance.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Research Intern</h3>
+          <small>Shakuntlam | January 2024 – February 2024</small>
+          <ul>
+            <li>Conducted market and operational research for strategy.</li>
+            <li>Provided competitor and pricing insights.</li>
+          </ul>
+          <h3>Intern</h3>
+          <small>Electric Loco Shed, Indian Railways | June 2023 – July 2023</small>
+          <ul>
+            <li>Studied power supply and electrical components of trains.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <ul>
+        <li>B.Tech Electronics, MSIT Sonipat (Aug 2025 – May 2028 expected)</li>
+        <li>Diploma Electronics, DSEU Ambedkar Shakarpur (Aug 2021 – Jun 2024, 8.17 CGPA)</li>
+        <li>High School Humanities, Tinu Public School, New Delhi (Aug 2022, 74%)</li>
+        <li>12th Grade, CBSE Board (70%)</li>
+        <li>10th Grade, CBSE Board (72%)</li>
+      </ul>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills-list" aria-label="Skills badges">
+        <span class="skill">Operations Management</span>
+        <span class="skill">MIS Reporting</span>
+        <span class="skill">Team Coordination</span>
+        <span class="skill">Vendor Management</span>
+        <span class="skill">Billing & Documentation</span>
+        <span class="skill">Electronics Design</span>
+        <span class="skill">PCB Soldering</span>
+        <span class="skill">Arduino Programming</span>
+        <span class="skill">IoT & Automation</span>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Rakesh Singh Tomar. All rights reserved.
+  </footer>
+</body>
+</html>
