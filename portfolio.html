@@ -8,12 +8,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
     /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
     body {
       font-family: 'Poppins', sans-serif;
@@ -25,222 +20,100 @@
       flex-direction: column;
     }
 
-    /* Site header */
+    /* Header with nav */
     header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: #3f51b5;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      z-index: 10000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 40px;
-      color: white;
+      position: fixed; top: 0; left: 0; width: 100%;
+      background: #3f51b5; color: #fff;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 15px 40px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); z-index: 1000;
     }
-
-    header h1 {
-      font-weight: 700;
-      font-size: 1.6rem;
-      letter-spacing: 0.12em;
-      cursor: default;
-    }
-
+    header h1 { font-weight: 700; font-size: 1.6rem; letter-spacing: .12em; }
     nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 28px;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: color 0.3s ease;
+      color: #fff; text-decoration: none; margin-left: 28px; font-weight: 600; font-size: 1rem;
+      transition: color .3s ease;
     }
-    nav a:hover, nav a:focus {
-      color: #aab8ff;
-      outline: none;
-    }
+    nav a:hover, nav a:focus { color: #aab8ff; outline: none; }
 
-    /* Main content */
-    main {
-      margin-top: 75px;
-      flex-grow: 1;
-      width: 100%;
-      max-width: 1000px;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 40px 20px;
-    }
-
-    section {
-      padding: 40px 0;
-      border-bottom: 1px solid #d7dbf7;
-      scroll-margin-top: 80px;
-    }
+    /* Main container */
+    main { margin-top: 75px; flex-grow: 1; width: 100%; max-width: 1000px; margin-inline: auto; padding: 40px 20px; }
+    section { padding: 40px 0; border-bottom: 1px solid #d7dbf7; scroll-margin-top: 80px; }
     section:last-child { border: none; }
 
+    /* Unified section titles (no left line) */
     h2 {
-      font-weight: 700;
-      font-size: 2.2rem;
-      color: #3f51b5;
-      margin-bottom: 18px;
-      letter-spacing: 0.06em;
-      border-left: none;
-      padding-left: 0;
+      font-weight: 700; font-size: 2.2rem; color: #3f51b5;
+      margin-bottom: 18px; letter-spacing: .06em; border-left: none; padding-left: 0;
     }
 
-    /* Back to Site hero with profile image */
+    /* Hero with aligned title + text */
     #back-to-site { padding-bottom: 60px; }
-
     .hero {
-      display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 28px;
-      align-items: center;
-      justify-content: center;
-      max-width: 820px;
-      margin: 0 auto;
+      display: grid; grid-template-columns: 180px 1fr; gap: 28px; align-items: center;
+      justify-content: center; max-width: 820px; margin: 0 auto;
     }
 
-    .avatar {
-      position: relative;
-      display: inline-block;
-    }
-
+    .avatar { position: relative; display: inline-block; }
     .profile-pic {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 10px 26px rgba(63,81,181,0.28);
-      border: 5px solid #ffffff;
-      background: #e9edff;
-      transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
+      width: 180px; height: 180px; border-radius: 50%; object-fit: cover;
+      border: 5px solid #fff; background: #e9edff;
+      box-shadow: 0 10px 26px rgba(63,81,181,.28);
+      transition: transform .35s ease, box-shadow .35s ease, filter .35s ease;
       will-change: transform, box-shadow, filter;
     }
-    .profile-pic:hover {
-      transform: scale(1.06) rotate(-1.5deg);
-      box-shadow: 0 18px 38px rgba(63,81,181,0.45);
-      filter: saturate(1.1);
-    }
-
+    .profile-pic:hover { transform: scale(1.06) rotate(-1.5deg); box-shadow: 0 18px 38px rgba(63,81,181,.45); filter: saturate(1.08); }
     .avatar::after {
-      content: "";
-      position: absolute;
-      inset: -8px;
-      border-radius: 50%;
-      background: radial-gradient(closest-side, rgba(122,153,255,0.25), transparent 70%);
-      opacity: 0;
-      transform: scale(0.95);
-      transition: opacity 0.35s ease, transform 0.35s ease;
-      pointer-events: none;
+      content: ""; position: absolute; inset: -8px; border-radius: 50%;
+      background: radial-gradient(closest-side, rgba(122,153,255,.25), transparent 70%);
+      opacity: 0; transform: scale(.95); transition: opacity .35s ease, transform .35s ease; pointer-events: none;
     }
-    .avatar:hover::after {
-      opacity: 1;
-      transform: scale(1.05);
-    }
+    .avatar:hover::after { opacity: 1; transform: scale(1.05); }
 
+    /* IMPORTANT: Align title and paragraph together on desktop */
     .hero-text { text-align: left; }
-    .hero-text h2 { margin-bottom: 8px; }
-    .hero-text p {
-      max-width: 560px;
-      color: #41507f;
-      margin-top: 6px;
-      line-height: 1.55;
-    }
+    .hero-text h2, .hero-text p { text-align: inherit; }
+    .hero-text p { max-width: 560px; color: #41507f; line-height: 1.55; }
 
     .cta-btn {
-      display: inline-block;
-      margin-top: 16px;
-      padding: 12px 26px;
-      background-color: #3f51b5;
-      color: #fff;
-      font-weight: 600;
-      font-size: 1.05rem;
-      border-radius: 30px;
-      text-decoration: none;
-      box-shadow: 0 6px 18px rgba(63,81,181,0.35);
-      transition: background-color 0.3s ease, transform 0.15s ease;
+      display: inline-block; margin-top: 16px; padding: 12px 26px; background: #3f51b5; color: #fff;
+      font-weight: 600; font-size: 1.05rem; border-radius: 30px; text-decoration: none;
+      box-shadow: 0 6px 18px rgba(63,81,181,.35); transition: background-color .3s ease, transform .15s ease;
     }
-    .cta-btn:hover { background-color: #6076ff; transform: translateY(-2px); }
-
-    /* Experience and Education grid */
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
-      gap: 40px;
-    }
-
-    /* Cards */
-    .card {
-      background: #f0f4ff;
-      border-radius: 16px;
-      padding: 25px 30px;
-      box-shadow: 0 12px 36px rgba(122,153,255,0.15);
-      transition: transform 0.3s ease;
-      cursor: default;
-    }
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 48px rgba(122,153,255,0.3);
-    }
-    .card h3 {
-      font-weight: 600;
-      font-size: 1.2rem;
-      margin-bottom: 8px;
-      color: #4052a4;
-    }
-    .card small {
-      display: block;
-      font-size: 0.9rem;
-      margin-bottom: 16px;
-      color: #7685c4;
-    }
-    .card ul {
-      color: #53629b;
-      font-size: 1rem;
-      list-style-position: inside;
-      padding-left: 12px;
-      line-height: 1.5;
-    }
-    .card ul li::marker { color: #7a99ff; font-weight: 700; }
+    .cta-btn:hover { background: #6076ff; transform: translateY(-2px); }
 
     /* Skills badges */
-    .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      justify-content: center;
-      margin-top: 10px;
-    }
+    .skills-list { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
     .skill {
-      background: #7a99ff;
-      color: white;
-      font-weight: 600;
-      font-size: 1rem;
-      padding: 10px 22px;
-      border-radius: 40px;
-      box-shadow: 0 8px 24px rgba(122,153,255,0.4);
-      user-select: none;
-      cursor: default;
-      transition: transform 0.2s ease;
+      background: #7a99ff; color: #fff; font-weight: 600; font-size: 1rem;
+      padding: 8px 20px; border-radius: 24px; box-shadow: 0 6px 18px rgba(122,153,255,.35);
+      transition: transform .2s ease;
     }
-    .skill:hover { transform: scale(1.08); box-shadow: 0 14px 40px rgba(122,153,255,0.6); }
+    .skill:hover { transform: scale(1.08); }
+
+    /* Cards */
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(370px, 1fr)); gap: 40px; }
+    .card {
+      background: #f0f4ff; border-radius: 16px; padding: 22px 26px;
+      box-shadow: 0 12px 36px rgba(122,153,255,.15); transition: transform .3s ease;
+    }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 20px 48px rgba(122,153,255,.3); }
+    .card h3 { font-weight: 600; font-size: 1.15rem; color: #4052a4; margin-bottom: 6px; }
+    .card small { display: block; color: #7685c4; margin-bottom: 12px; }
+    .card ul { color: #53629b; list-style: disc inside; line-height: 1.5; }
+
+    /* Contact buttons */
+    .contact-actions { display: flex; gap: 14px; justify-content: center; margin-top: 10px; }
+    .btn-outline {
+      display: inline-block; padding: 10px 22px; border-radius: 26px; border: 2px solid #3f51b5;
+      color: #3f51b5; font-weight: 700; text-decoration: none; background: #fff;
+      transition: background .25s, color .25s, transform .15s, box-shadow .25s;
+    }
+    .btn-outline:hover { background: #3f51b5; color: #fff; transform: translateY(-2px); box-shadow: 0 10px 28px rgba(63,81,181,.35); }
 
     /* Footer */
     footer {
-      text-align: center;
-      padding: 20px 10px;
-      background: #3f51b5;
-      color: white;
-      font-weight: 400;
-      font-size: 0.9rem;
-      user-select: none;
-      position: fixed;
-      width: 100%;
-      bottom: 0;
-      left: 0;
-      box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+      text-align: center; padding: 20px 10px; background: #3f51b5; color: #fff;
+      font-weight: 400; font-size: .9rem; user-select: none; position: fixed; width: 100%; bottom: 0; left: 0;
+      box-shadow: 0 -2px 8px rgba(0,0,0,.1);
     }
 
     /* Responsive */
@@ -262,86 +135,116 @@
     <nav aria-label="Primary navigation">
       <a href="index.html">Back to Site</a>
       <a href="#experience">Experience</a>
-      <a href="#education">Education</a>
       <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <main class="container" role="main">
-    <!-- Back to Site section with profile image and hover animation -->
+    <!-- Hero with aligned title + paragraph -->
     <section id="back-to-site">
       <div class="hero">
-        <!-- Update this path to your actual image file -->
         <div class="avatar">
+          <!-- Update this path to your image -->
           <img src="profile.png" alt="Rakesh Singh Tomar" class="profile-pic" />
         </div>
         <div class="hero-text">
           <h2>Welcome to My Portfolio</h2>
           <p>
-            Explore my professional journey in operations and electronics, with a focus on
-            advanced chip design, MIS, and workflow optimization.
+            Electronics engineer and operations specialist based in Delhi. I build practical tech
+            solutions, improve workflows, and enjoy working on IoT and automation projects.
           </p>
           <a class="cta-btn" href="index.html">Back to Site</a>
         </div>
       </div>
     </section>
 
+    <!-- Experience -->
     <section id="experience">
-      <h2>Professional Experience</h2>
+      <h2>Experience Highlights</h2>
       <div class="grid-2">
         <div class="card">
           <h3>Operations & MIS Manager</h3>
-          <small>Shakuntlam | August 2024 – Present</small>
+          <small>Shakuntlam • 2024–Present</small>
           <ul>
-            <li>Manage daily operations and coordinate teams efficiently.</li>
-            <li>Vendor & supplier coordination for timely procurement.</li>
-            <li>Site visits to monitor execution and client satisfaction.</li>
-            <li>Drive cost efficiency and process improvements.</li>
-            <li>Billing, documentation, and compliance management.</li>
-            <li>MIS reporting supporting executive decisions.</li>
-            <li>Assist in team hiring and training for performance.</li>
+            <li>Streamlined daily operations and reporting for better decisions</li>
+            <li>Coordinated vendors/resources to deliver projects on schedule</li>
+            <li>Drove cost and process improvements using data insights</li>
           </ul>
         </div>
         <div class="card">
-          <h3>Research Intern</h3>
-          <small>Shakuntlam | January 2024 – February 2024</small>
+          <h3>Electronics Intern</h3>
+          <small>Indian Railways • 2023</small>
           <ul>
-            <li>Conducted market and operational research for strategy.</li>
-            <li>Provided competitor and pricing insights.</li>
-          </ul>
-          <h3>Intern</h3>
-          <small>Electric Loco Shed, Indian Railways | June 2023 – July 2023</small>
-          <ul>
-            <li>Studied power supply and electrical components of trains.</li>
+            <li>Learning on power systems, distribution, and control components</li>
+            <li>Hands-on exposure to large-scale electrical systems</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section id="education">
-      <h2>Education</h2>
-      <ul>
-        <li>B.Tech Electronics, MSIT Sonipat (Aug 2025 – May 2028 expected)</li>
-        <li>Diploma Electronics, DSEU Ambedkar Shakarpur (Aug 2021 – Jun 2024, 8.17 CGPA)</li>
-        <li>High School Humanities, Tinu Public School, New Delhi (Aug 2022, 74%)</li>
-        <li>12th Grade, CBSE Board (70%)</li>
-        <li>10th Grade, CBSE Board (72%)</li>
-      </ul>
-    </section>
-
+    <!-- Skills -->
     <section id="skills">
-      <h2>Skills</h2>
-      <div class="skills-list" aria-label="Skills badges">
+      <h2>Skills & Tools</h2>
+      <div class="skills-list">
         <span class="skill">Operations Management</span>
         <span class="skill">MIS Reporting</span>
-        <span class="skill">Team Coordination</span>
-        <span class="skill">Vendor Management</span>
-        <span class="skill">Billing & Documentation</span>
-        <span class="skill">Electronics Design</span>
-        <span class="skill">PCB Soldering</span>
-        <span class="skill">Arduino Programming</span>
+        <span class="skill">Vendor Coordination</span>
+        <span class="skill">Team Leadership</span>
         <span class="skill">IoT & Automation</span>
+        <span class="skill">Circuit Design</span>
+        <span class="skill">PCB Soldering</span>
+        <span class="skill">Arduino / Microcontrollers</span>
       </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Smart Home System</h3>
+          <small>IoT • Hardware + Firmware</small>
+          <ul>
+            <li>Multi-function controller for home automation</li>
+            <li>Modular design for sensors and relays</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Wireless EV Charger (Concept)</h3>
+          <small>Research & Prototyping</small>
+          <ul>
+            <li>Explored inductive charging topology and coil design</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Fire Safety System</h3>
+          <small>Embedded • Safety</small>
+          <ul>
+            <li>Alert and cut-off logic using sensor fusion approach</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>IoT Appliance Control</h3>
+          <small>Home Automation</small>
+          <ul>
+            <li>Remote control and scheduling for household loads</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="contact-actions">
+        <a class="btn-outline" href="mailto:youremail@example.com">Email Me</a>
+        <a class="btn-outline" href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <p style="text-align:center; color:#5a6aa2; margin-top:12px; font-size:0.98rem;">
+        Detailes available on request.
+      </p>
     </section>
   </main>
 
